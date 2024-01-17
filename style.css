@@ -16,6 +16,7 @@ body {
     text-align: center;
     width: 70%;
     margin: 0 auto;
+    margin-left: 25px;
 }
   
 label, input, textarea {
