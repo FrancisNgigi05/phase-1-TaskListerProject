@@ -53,4 +53,9 @@ function handleSubmit(event) {
     
     // After submmission the task should be renderd
     renderTask(taskObj);
+
 }
+
+// function addTask(taskObj) {
+//     fetch('')
+// }
