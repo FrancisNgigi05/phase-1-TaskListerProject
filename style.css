@@ -120,3 +120,17 @@ button:hover {
 .table-header {
     padding: 10px;
 }
+
+
+#deleteButton {
+    background-color: rgb(236, 42, 42);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#deleteButton:hover {
+    background-color: red;
+}

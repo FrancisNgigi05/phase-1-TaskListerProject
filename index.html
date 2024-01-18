@@ -40,21 +40,25 @@
             <table>
                 <thead>
                     <th class="table-header">Check Box</th>
+                    <th class="table-header">Task</th>
                     <th class="table-header">Due Date</th>
                     <th class="table-header">Priority</th>
                     <th class="table-header">Delete Task</th>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody id="table-Body">
+                    <!-- <tr>
                         <td>
                             <input type="checkbox" id="myCheckbox">
+                        </td>
+                        <td>
+                            Submit Project
                         </td>
                         <td>2024-01-31</td>
                         <td>High</td>
                         <td>
-                          <button>X</button>
+                          <button id="deleteButton">X</button>
                         </td>
-                      </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -75,13 +79,14 @@
         window.onclick = function(event) {
             if (!event.target.matches('.dropdown') && !event.target.matches('#priority'))
             {
-                var dropdown = document.querySelector('.dropdown-content');
+                let dropdown = document.querySelector('.dropdown-content');
                 if (dropdown.classList.contains('show')) {
                     dropdown.classList.remove('show');
                 }
             }
         }
     </script>
+    <script defer src="./src/index.js"></script>
 
     </body>
 </html>
