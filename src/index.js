@@ -1,5 +1,11 @@
 const formSubmission = document.getElementById('taskForm');
 
+// Spliting because I only need the date part not the Time part ("2023-12-06T15:30:45.500Z")
+// Array after spliting -->["2023-12-06", "15:30:45.500Z"]
+const currentDate = new Date().toISOString().split('T')[0];
+document.getElementById('dueDate').setAttribute('min', currentDate);
+
+
 // This function will make sure that all of my tasks are rendered
 // in the TO DO LIST section
 function renderOneTask(task) {
@@ -31,20 +37,21 @@ function renderOneTask(task) {
         </td>
     `;
 
-    tableRow.querySelector('#deleteButton').addEventListener('click', function () {
+    tableRow.querySelector('#deleteButton').addEventListener('click', function() {
         tableRow.remove();
         deleteTask(task.id);
     });
-    tableRow.querySelector('#myCheckbox').addEventListener('click', function () {
+    tableRow.querySelector('#myCheckbox').addEventListener('click', function() {
         tableRow.remove();
+        alert('WELL DONE!! MOVE ON TO NEXT TASK!');
         deleteTask(task.id);
     });
-
+    
+    
+    
     // Appending the tableRow to tableBody
     tableBody.appendChild(tableRow);
-
-    sortTasksInOrderOfPriority();
-
+    
 }
 
 // Function that updates the deletion of a task
@@ -72,13 +79,12 @@ function sortTasksInOrderOfPriority() {
 
         // Compares High, Low, Medium and sorts it out
         return (priorityOne === priorityTwo ? 0 : priorityOne === 'High' ? -1 : 1);
-
-
     });
+
     // Remove every row first
     tableBody.innerHTML = '';
 
-    // Add them in back aggain while sorted
+    // Add them in back again while sorted
     sortedRows.forEach(row => tableBody.appendChild(row));
 }
 
