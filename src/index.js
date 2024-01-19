@@ -66,29 +66,6 @@ function deleteTask(id) {
         .then((task) => console.log(task))
 }
 
-// This function is supposed to sort the order of the tasks in their priority
-function sortTasksInOrderOfPriority() {
-    const tableBody = document.getElementById('table-Body');
-
-    // Putting the row data to be represented as arrays
-    const rows = Array.from(tableBody.getElementsByTagName('tr'));
-
-    const sortedRows = rows.sort(function (rowA, rowB) {
-        const priorityOne = rowA.getElementsByTagName('td')[3].textContent;
-        const priorityTwo = rowB.getElementsByTagName('td')[3].textContent;
-
-        // Compares High, Low, Medium and sorts it out
-        return (priorityOne === priorityTwo ? 0 : priorityOne === 'High' ? -1 : 1);
-    });
-
-    // Remove every row first
-    tableBody.innerHTML = '';
-
-    // Add them in back again while sorted
-    sortedRows.forEach(row => tableBody.appendChild(row));
-}
-
-
 formSubmission.addEventListener('submit', handleSubmit);
 
 // This function will handle the submission of the form
@@ -125,7 +102,7 @@ function addTask(taskObj) {
         })
         .then(task => {
             console.log("Task added successfully: ", task);
-            // renderOneTask(task);
+            renderOneTask(task);
         })
         .catch(error => console.error('Error adding task:', error));
 }
