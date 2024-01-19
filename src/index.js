@@ -24,13 +24,13 @@ function renderOneTask(task) {
             <input type="checkbox" id="myCheckbox">
         </td>
         <td>
-            ${task.taskName}
+            <p id="task-taskName">${task.taskName}</p>
         </td>
         <td>
-            ${task.dueDate}
+            <p id="task-dueDate">${task.dueDate}</p>
         </td>
         <td>
-            ${task.priority}
+        <p id="task-priority">${task.priority}</p>
         </td>
         <td>
             <button id="deleteButton">X</button>
@@ -46,7 +46,7 @@ function renderOneTask(task) {
         alert('WELL DONE!! MOVE ON TO NEXT TASK!');
         deleteTask(task.id);
     });
-    
+
     
     
     // Appending the tableRow to tableBody
