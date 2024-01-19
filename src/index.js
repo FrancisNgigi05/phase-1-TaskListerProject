@@ -103,7 +103,6 @@ function handleSubmit(event) {
         description: event.target.description.value,
         dueDate: event.target.dueDate.value,
         priority: event.target.priority.value,
-        completed: false
     };
 
     // After submmission the task should be renderd
@@ -126,9 +125,8 @@ function addTask(taskObj) {
         })
         .then(task => {
             console.log("Task added successfully: ", task);
-            renderOneTask(task);
+            // renderOneTask(task);
         })
-        .then(() => sortTasksInOrderOfPriority())
         .catch(error => console.error('Error adding task:', error));
 }
 
